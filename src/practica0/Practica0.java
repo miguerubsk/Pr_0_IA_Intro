@@ -28,6 +28,11 @@ public class Practica0 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Alumno_IA alumno = new Alumno_IA();
+        
+//        alumno.crearAlumno();
+        alumno.CalcularNotaPracticas();
+        System.out.println(alumno);
     }
 
 }
