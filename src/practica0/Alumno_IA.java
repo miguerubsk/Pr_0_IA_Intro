@@ -17,35 +17,50 @@
 
 package practica0;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Miguel González García
  */
 public class Alumno_IA extends Alumno{
-    private int GrupoPracticas, NotaPracticas;
+    private int GrupoPracticas;
+    private double NotaPracticas;
+    private final Scanner reader = new Scanner(System.in);
 
     public Alumno_IA(int GrupoPracticas, String nombre, String apellido, int dni, String email) {
         super(nombre, apellido, dni, email);
         this.GrupoPracticas = GrupoPracticas;
     }
+    
+    public Alumno_IA(int GrupoPracticas, Alumno alumno) {
+        super(alumno.getNombre(), alumno.getApellido(), alumno.getDni(), alumno.getEmail());
+        this.GrupoPracticas = GrupoPracticas;
+    }
 
     public Alumno_IA() {
+        super();
+        this.GrupoPracticas = -1;
+        this.NotaPracticas = -1;
     }
     
     public void CalcularNotaPracticas(){
         int aux = 0;
         for(int i = 0; i < 4; i++){
             System.out.println("Nota " + (i+1) + ": ");
-            aux += this.reader.nextInt();
+            aux += this.reader.nextDouble();
         }
         this.NotaPracticas = aux/4;
+    }
+    
+    public void CalcularNotaPracticas(double nota1, double nota2, double nota3, double nota4){
+        this.NotaPracticas = (nota1+nota2+nota3+nota4)/4;
     }
 
     @Override
     public String toString() {
-        return "Alumno_IA{"+ "nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", email=" + email + ", GrupoPracticas=" + GrupoPracticas + ", NotaPracticas=" + NotaPracticas + '}';
+        return "Alumno_IA{"+ "nombre=" + super.getNombre() + ", apellido=" + super.getApellido() + ", dni=" + super.getDni() + ", email=" + super.getEmail() + ", GrupoPracticas=" + GrupoPracticas + ", NotaPracticas=" + NotaPracticas + '}';
     }
     
-    
-
+//    public
 }
