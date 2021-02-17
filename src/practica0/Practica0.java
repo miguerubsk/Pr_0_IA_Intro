@@ -16,7 +16,6 @@
  */
 package practica0;
 
-import Ficheros.EscribirFichero;
 import Ficheros.LeerFichero;
 import java.io.IOException;
 import java.util.ArrayList;
