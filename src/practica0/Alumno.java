@@ -17,16 +17,14 @@
 
 package practica0;
 
-import java.util.Scanner;
 
 /**
  *
  * @author Miguel González García
  */
 public class Alumno {
-    protected String nombre, apellido, email;
-    protected int dni;
-    protected final Scanner reader = new Scanner(System.in);
+    private String nombre, apellido, email;
+    private int dni;
 
     public Alumno(String nombre, String apellido, int dni, String email) {
         this.nombre = nombre;
@@ -38,7 +36,7 @@ public class Alumno {
     public Alumno() {
         this.nombre = "";
         this.apellido = "";
-        this.dni = 0;
+        this.dni = -1;
         this.email = "";
     }
 
@@ -47,19 +45,33 @@ public class Alumno {
         return "Alumno{" + "nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", email=" + email + '}';
     }
     
-    public void crearAlumno(){
-        System.out.println("Nombre: ");
-        this.nombre = reader.next();
-        System.out.println("Apellidos: ");
-        this.apellido = reader.next();
-        System.out.println("DNI: ");
-        this.dni = reader.nextInt();
-        System.out.println("E-Mail: ");
-        this.email = reader.next();
-    }
+//    public void crearAlumno(){
+//        System.out.println("Nombre: ");
+//        this.nombre = reader.next();
+//        System.out.println("DNI: ");
+//        this.dni = reader.nextInt();
+//        System.out.println("E-Mail: ");
+//        this.email = reader.next();
+//    }
     
     public void mostrarAlumno(){
         System.out.println(this);
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+           
 }
